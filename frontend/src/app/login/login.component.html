@@ -1,0 +1,99 @@
+<div *ngIf="!logoutRequest">
+  <form data-bs-theme="dark" *ngIf="loginForm" [formGroup]="loginFormGroup" (ngSubmit)="onSubmitLogin()">
+    <h1 *ngIf="!signedUpSuccess" class="h3 mb-3 fw-normal">Please Sign in</h1>
+    <h1 *ngIf="signedUpSuccess" class="h4 mb-3 fw-normal">Signed up successfully!! <br>Please Sign in to continue.</h1>
+    <div
+      *ngIf="loginFormGroup?.invalid && (loginFormGroup?.dirty || !loginFormGroup?.untouched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="userName?.errors?.['required']">Name is required.</div>
+      <div *ngIf="password?.errors?.['required']">Password is required.</div>
+      <div *ngIf="userName?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+    </div>
+    <div class="form-floating" id="userName">
+      <input type="text" class="form-control" formControlName="userName" id="floatingInput" placeholder="User name">
+      <label for="floatingInput">User Name</label>
+    </div>
+
+    <div class="form-floating" id="password">
+      <input type="password" class="form-control" formControlName="password" id="floatingPassword"
+             placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="showPassword" (click)="togglePassword();"> Show Password
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <br><br>
+    Don't have an account? <input id="signup" type="button" value="Sign up" (click)="toggleSignUp();"> here.
+  </form>
+
+
+  <form data-bs-theme="dark" [formGroup]="signupFormGroup" *ngIf="!loginForm" (ngSubmit)="onSubmitSignup()">
+    <h1 class="h3 mb-3 fw-normal">Please Sign up</h1>
+    <h1 *ngIf="signedUpFailed" class="h6 mb-3 fw-normal" style="color: red">Failed to Sign up.</h1>
+
+    <div
+      *ngIf="signupFormGroup?.invalid && (signupFormGroup?.dirty || !signupFormGroup?.untouched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="userName?.errors?.['required']">Name is required.</div>
+      <div *ngIf="email?.errors?.['required']">Email is invalid.</div>
+      <div *ngIf="password?.errors?.['required']">Password is required.</div>
+      <div *ngIf="passwordConfirmation?.errors?.['required']">Please retype your password.</div>
+      <div *ngIf="userName?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="password?.errors?.['minlength']">
+        Password must be at least 6 characters long.
+      </div>
+      <div
+        *ngIf="signupFormGroup.errors?.['passwordMismatch'] &&
+    (!signupFormGroup?.untouched || signupFormGroup.dirty)"
+      >
+        Passwords don't match.
+      </div>
+    </div>
+
+    <div class="form-floating" id="userName">
+      <input type="text" class="form-control" formControlName="userName" id="floatingInput" placeholder="User name">
+      <label for="floatingInput">User Name</label>
+    </div>
+
+    <div class="form-floating" id="email">
+      <input type="text" class="form-control" formControlName="email" id="floatingEmail"
+             placeholder="username@example.com">
+      <label for="floatingEmail">Email</label>
+    </div>
+
+    <div class="form-floating" id="password">
+      <input type="password" class="form-control" formControlName="password" id="floatingPassword"
+             placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-floating" id="passwordConfirmation">
+      <input type="password" class="form-control" formControlName="passwordConfirmation"
+             id="floatingPasswordConfirmation" placeholder="Retype Password">
+      <label for="floatingPasswordConfirmation">Retype Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="showPassword" (click)="togglePassword();"> Show Password
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+    <br><br>
+    Already have an account? <input type="button" id="login" value="login" (click)="toggleSignUp();"> here.
+  </form>
+</div>
+
+<div *ngIf="logoutRequest">
+  logged out successfully! <a routerLink="/login"> login </a> again to continue using the application.
+</div>

@@ -1,0 +1,22 @@
+<div id="game-container"> </div>
+
+<!-- Modal -->
+<div class="modal fade" data-bs-backdrop="static" id="game-complete-modal" tabindex="-1" role="dialog" aria-labelledby="game-complete-label">
+  <div class="modal-dialog  modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-bg-dark">
+        <br>
+        <h4>{{ gameState.winnerColor == "w" ? "White has won!" : "Black has won!" }}</h4>
+      </div>
+      <div class="modal-footer align-self-center">
+        <button type="button" class="btn btn-secondary" id="modal-close" data-bs-dismiss="modal">View Board</button>
+        <button type="button" class="btn btn-primary" (click)="newGame()"> New Game</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="game-complete-modal-trigger" data-bs-toggle="modal" data-bs-target="#game-complete-modal" style="display: none">
+  Launch Game Complete Modal
+</button>

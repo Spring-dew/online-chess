@@ -1,0 +1,82 @@
+td {
+  /*background-color: white;*/
+  width: 9vh !important;
+  height: 9vh !important;
+  text-align: center;
+  vertical-align: middle;
+  font-size: xxx-large;
+  padding: 0;
+  cursor: default;
+  user-select: none;
+}
+
+.file-marker {
+  /*background-color: rgba(var(--bs-dark-rgb));*/
+  font-size: larger;
+  /*vertical-align: bottom;*/
+  vertical-align: middle;
+}
+
+.rank-marker {
+  /*background-color:  rgba(var(--bs-dark-rgb));*/
+  font-size: larger;
+  /*text-align: right;*/
+  padding-right: 8px;
+  text-align: center;
+}
+
+table {
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dark {
+  background: #aaa;
+}
+
+.light {
+  background: #eee;
+}
+
+.piece {
+  color: indigo;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-style: solid;
+  border-width: medium;
+  border-color: white;
+  /*color: rgb(75, 0, 130);*/
+}
+
+.black-pawn {
+  font-size: xx-large;
+}
+
+.highlight-self {
+  background-color: #42A948;
+}
+
+.highlight-target {
+  background-color: lightgreen;
+}
+
+.highlight-move {
+  background-color: lightpink;
+}
+
+.highlight-target-possible-capture {
+  background-color: lightpink;
+}
+
+.modal-content {
+  background-color: #212529;
+}
+
+.checkmate {
+  background-color: orangered;
+}
+
+.highlight-check {
+  background-color: turquoise;
+}

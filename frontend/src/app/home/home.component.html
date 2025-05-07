@@ -1,0 +1,12 @@
+<h1>{{ title }}</h1>
+<br><br>
+<p class="lead">Online Chess is a Two-Player realtime Chess game made using <br> Angular, SpringBoot and Websocket
+  technologies.<br>
+  Sign up / login and play classic Chess game online.</p>
+<br>
+<p class="lead" *ngIf="notLogged()">
+  <a routerLink="/login" class="btn btn-lg btn-secondary fw-bold border-white bg-white" style="color:black">Login</a>
+</p>
+<p class="lead" *ngIf="!notLogged()">
+  <a routerLink="/mode-select" class="btn btn-lg btn-secondary fw-bold border-white bg-white" style="color:black">Search for Opponents Online</a>
+</p>

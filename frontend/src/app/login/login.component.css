@@ -1,0 +1,37 @@
+#signup, #login {
+  text-decoration: underline;
+  border: none;
+  background:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+}
+
+form {
+  /*max-width: 340px;*/
+  justify-self: center;
+  min-width: 320px;
+}
+
+.alert-danger {
+  padding: .5em;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+

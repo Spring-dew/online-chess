@@ -1,0 +1,15 @@
+<div *ngIf="selectMode" class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-outline-success" type="button" value="4" (click)="findOpponents(3)">Classic</button>
+  <button class="btn btn-outline-success disabled" type="button" value="1"  disabled (click)="findOpponents(0)">Blitz</button>
+  <button class="btn btn-outline-success disabled" type="button" value="2" disabled (click)="findOpponents(1)">Bullet</button>
+  <button class="btn btn-outline-success disabled" type="button" value="3" disabled (click)="findOpponents(2)">Rapid</button>
+</div>
+
+<div *ngIf="selectMode">
+<br>*Currently only Classic mode is playable.
+</div>
+
+<div *ngIf="findOpponent">
+  <p> Finding Opponent Online....</p>
+<!--  <button class="btn btn-outline-success" type="button" (click)="gotogametemp()">go to game</button>-->
+</div>
